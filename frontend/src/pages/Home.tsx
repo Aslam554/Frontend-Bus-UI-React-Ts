@@ -29,7 +29,7 @@ const Home: React.FC = () => {
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
           <button
             onClick={handleBookBus}
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600"
+            className="px-4 py-2  bg-indigo-600 text-white rounded-lg font-medium hover:bg-yellow-400 hover:text-black transition duration-600"
           >
             Book Bus
           </button>
