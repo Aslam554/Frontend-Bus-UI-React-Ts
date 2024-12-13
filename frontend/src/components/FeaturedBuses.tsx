@@ -1,4 +1,3 @@
-import React from 'react';
 import { Bus, Clock, Users } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import bus1 from '../assets/bus1.jpg';

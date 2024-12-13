@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 
 const ComplaintBox: React.FC = () => {
   const [formData, setFormData] = useState({

@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaUserGraduate, FaBus, FaDownload } from 'react-icons/fa';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import tulogo from '../assets/tulogo.jpg'; // Import the image
 import bus1 from '../assets/cmhbus.jpg';
-import bus2 from '../assets/bus2.jpg';
-import bus3 from '../assets/bus3.jpg';
-import bus4 from '../assets/bus4.jpg';
-import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 interface Booking {
@@ -30,7 +26,7 @@ const BookingList: React.FC = () => {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/bookings');
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/bookings`);
         // Sort bookings by departureTime in descending order
         const sortedBookings = response.data.sort(
           (a: Booking, b: Booking) => new Date(b.departureTime).getTime() - new Date(a.departureTime).getTime()

@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import ComplaintBox from './ComplaintBox';
 import { Toaster } from 'react-hot-toast';
 
 const Layout = () => {

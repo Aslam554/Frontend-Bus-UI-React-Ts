@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FaUser, FaPhone, FaMapMarkerAlt, FaClock, FaBook, FaHome } from 'react-icons/fa';
+import { FaUser, FaPhone, FaMapMarkerAlt, FaClock, FaBook } from 'react-icons/fa';
 import busImage from '../assets/bus.jpg';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -17,12 +17,13 @@ interface BusFormInput {
 }
 
 const BookingForm: React.FC = () => {
+  console.log(import.meta.env)
   const { register, handleSubmit, formState: { errors }, reset } = useForm<BusFormInput>();
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<BusFormInput> = async (data) => {
     try {
-      await axios.post('http://localhost:5000/api/bookings', data);
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/bookings`, data);
       toast.success('Bus booking added successfully!');
       //await new Promise(setTimeout(navigate('/'),5000))
       await new Promise(resolve => setTimeout(resolve, 5000)).then(() => navigate('/'));
@@ -42,9 +43,9 @@ const BookingForm: React.FC = () => {
     }
   };
 
-  const handleBackToHome =() => {
-    navigate('/');
-  };
+  // const handleBackToHome =() => {
+  //   navigate('/');
+  // };
 
   return (
     

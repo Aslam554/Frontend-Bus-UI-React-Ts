@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/bookings', bookingRoutes);
+  app.use('/api/bookings', bookingRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
