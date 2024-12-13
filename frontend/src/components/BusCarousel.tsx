@@ -8,6 +8,8 @@ import bus4 from '../assets/bus4.jpg';
 import bus5 from '../assets/bus5.jpg';
 import bus6 from '../assets/bus6.jpg';
 import bus7 from '../assets/bus7.jpg';
+
+
 const BusCarousel = () => {
   const settings = {
     dots: true,
@@ -58,16 +60,17 @@ const BusCarousel = () => {
   ];
 
   return (
-    <div className="relative" data-aos="fade-up">
+    <div className="relative w-full overflow-hidden" data-aos="fade-up">
+      
       <Slider {...settings}>
         {slides.map((slide, index) => (
-          <div key={index} className="relative h-[500px]">
+          <div key={index} className="relative h-[700px]">
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-[700px] object-cover"
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white">
+            <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white">
               <h2 className="text-4xl font-bold mb-4" data-aos="fade-up">{slide.title}</h2>
               <p className="text-xl" data-aos="fade-up" data-aos-delay="200">{slide.description}</p>
             </div>

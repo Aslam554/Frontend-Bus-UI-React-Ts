@@ -42,8 +42,7 @@ const BookingForm: React.FC = () => {
     }
   };
 
-  const handleBackToHome = async() => {
-    const navigate = useNavigate();
+  const handleBackToHome =() => {
     navigate('/');
   };
 

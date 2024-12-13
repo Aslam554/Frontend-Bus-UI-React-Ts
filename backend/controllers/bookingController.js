@@ -1,7 +1,9 @@
 const Booking = require('../models/Booking');
 
 const addBooking = async (req, res) => {
+  console.log(req.body)
   const { studentName, mobileNumber, from, to, departureTime, arrivalTime } = req.body;
+
 
   try {
     // Generate a unique seat number

@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
             <Bus className="h-8 w-8" />
-            <span className="font-bold text-xl">HostelBus</span>
+            <span className="font-bold text-xl">TUBus Services</span>
           </Link>
           
           <div className="flex items-center space-x-4">
@@ -37,9 +37,9 @@ const Navbar = () => {
             >
               My Bookings
             </button>
-            <Link to="/login" className="flex items-center space-x-1 hover:bg-yellow-500 hover:text-black transition duration-600 px-4 py-2 rounded-lg">
+            <Link to="/complaint" className="flex items-center space-x-1 hover:bg-yellow-500 hover:text-black transition duration-600 px-4 py-2 rounded-lg">
               <UserCircle2 className="h-5 w-5" />
-              <span>Login</span>
+              <span>Complaints</span>
             </Link>
             <button
               onClick={handleBackToHome}

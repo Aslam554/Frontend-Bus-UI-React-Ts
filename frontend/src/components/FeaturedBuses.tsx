@@ -7,72 +7,73 @@ import bus3 from '../assets/bus3.jpg';
 import bus4 from '../assets/bus4.jpg';
 import bus5 from '../assets/bus5.jpg';
 import bus6 from '../assets/bus6.jpg';
+
 const featuredBuses = [
   {
     id: 1,
     imgs: bus1,
-    routeNumber: "H101",
-    from: "North Hostel",
-    to: "Main Campus",
+    routeNumber: "B101",
+    from: "CMH Hostel",
+    to: "Tezpur Town",
     departureTime: "08:00 AM",
-    availableSeats: 25,
-    totalSeats: 40,
-    price: 2.50
+    availableSeats: 20,
+    totalSeats: 25,
+    price: 40.50
   },
   {
     id: 2,
     imgs: bus2,
-    routeNumber: "H202",
-    from: "South Hostel",
+    routeNumber: "B202",
+    from: "Town Tezpur",
     to: "Engineering Block",
     departureTime: "08:30 AM",
     availableSeats: 15,
-    totalSeats: 40,
-    price: 2.50
+    totalSeats: 30,
+    price: 64.50
   },
   {
     id: 3,
     imgs: bus3,
-    routeNumber: "H303",
-    from: "East Hostel",
-    to: "Library Complex",
+    routeNumber: "B303",
+    from: "Main Bus Stand",
+    to: "Tezpur Town",
     departureTime: "09:00 AM",
-    availableSeats: 30,
-    totalSeats: 40,
-    price: 2.50
+    availableSeats: 10,
+    totalSeats: 60,
+    price: 99.00
   },
   {
     id: 4,
     imgs: bus4,
-    routeNumber: "H101",
-    from: "North Hostel",
-    to: "Main Campus",
-    departureTime: "08:00 AM",
+    routeNumber: "B404",
+    from: "Soe Buildings",
+    to: "Tezpur Town",
+    departureTime: "09:30 AM",
     availableSeats: 25,
     totalSeats: 40,
-    price: 2.50
+    price: 50.00
   },
   {
     id: 5,
     imgs: bus5,
-    routeNumber: "H202",
-    from: "South Hostel",
-    to: "Engineering Block",
-    departureTime: "08:30 AM",
+    routeNumber: "B505",
+    from: "Tezpur Town",
+    to: "Science Departments",
+    departureTime: "10:30 AM",
     availableSeats: 15,
     totalSeats: 40,
-    price: 2.50
+    price: 75.50
   },
   {
     id: 6,
     imgs: bus6,
-    routeNumber: "H303",
-    from: "East Hostel",
-    to: "Library Complex",
-    departureTime: "09:00 AM",
+    routeNumber: "B606",
+    from: "Tezpur Town",
+    to: "Tezpur University",
+    departureTime: "11:00 AM",
     availableSeats: 30,
     totalSeats: 40,
-    price: 2.50
+    price: 45.50
   }
 ];
 
@@ -87,39 +88,45 @@ const FeaturedBuses = () => {
         <h2 className="text-3xl font-bold text-center mb-12" data-aos="fade-up">
           Featured Bus Routes
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featuredBuses.map((bus) => (
             <div
               key={bus.id}
-              className="font-serif font-bold bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
+              className="relative font-serif font-bold bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg overflow-hidden "
               data-aos="fade-up"
               data-aos-delay={bus.id * 100}
             >
-              <div className="bg-indigo-600 p-4">
+              <img
+                src={bus.imgs}
+                alt={`Bus ${bus.id}`}
+                className="absolute inset-0 w-full h-full object-cover z-0"
+              />
+              <div className="absolute inset-0 bg-black opacity-30 z-10 hover:duration-200 hover:transition-all hover:ease-in-out hover:scale-[1.05] hover:shadow-2xl"></div>
+              <div className="relative z-20 p-4 bg-indigo-600">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
                     <Bus className="h-6 w-6 text-white" />
                     <span className="text-white font-bold">{bus.routeNumber}</span>
                   </div>
-                  <span className="text-white font-bold">${bus.price}</span>
+                  {/* <span className="text-white font-bold">Rs {bus.price} /-</span> */}
                 </div>
               </div>
-              <div className="p-6">
+              <div className="relative z-20 p-6">
                 <div className="mb-4">
-                  <div className="text-gray-600">From</div>
-                  <div className="font-semibold">{bus.from}</div>
+                  <div className="text-white">From</div>
+                  <div className="font-semibold text-white">{bus.from}</div>
                 </div>
                 <div className="mb-4">
-                  <div className="text-gray-600">To</div>
-                  <div className="font-semibold">{bus.to}</div>
+                  <div className="text-white">To</div>
+                  <div className="font-semibold text-white">{bus.to}</div>
                 </div>
                 <div className="mb-4 flex items-center space-x-2">
-                  <Clock className="h-5 w-5 text-indigo-600" />
-                  <span className="font-semibold">{bus.departureTime}</span>
+                  <Clock className="h-5 w-5 text-white" />
+                  <span className="font-semibold text-white">{bus.departureTime}</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Users className="h-5 w-5 text-indigo-600" />
-                  <span className="font-semibold">
+                  <Users className="h-5 w-5 text-white" />
+                  <span className="font-semibold text-white">
                     {bus.availableSeats} seats available
                   </span>
                 </div>

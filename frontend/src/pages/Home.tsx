@@ -6,6 +6,7 @@ import { Bus, Clock, Shield, CreditCard } from 'lucide-react';
 import BusCarousel from '../components/BusCarousel';
 import FeaturedBuses from '../components/FeaturedBuses';
 import BusList from '../components/BusList';
+import AwarenessCarousel from '../components/AwarenessCarousel';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const Home: React.FC = () => {
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
           <button
             onClick={handleBookBus}
-            className="px-4 py-2  bg-indigo-600 text-white rounded-lg font-medium hover:bg-yellow-400 hover:text-black transition duration-600"
+            className="px-10 py-[10px] mb-[60px] text-2xl bg-indigo-700 text-white rounded-lg font-medium hover:bg-yellow-400 hover:text-black transition duration-600"
           >
             Book Bus
           </button>
@@ -46,7 +47,7 @@ const Home: React.FC = () => {
       {/* Features */}
       <div className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose HostelBus?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Why Choose TUBus Services?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
               <Bus className="h-12 w-12 text-indigo-600 mb-4" />
@@ -73,6 +74,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
+      <AwarenessCarousel/>
       {/* Booking Rules */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
